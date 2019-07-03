@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   android:orientation="vertical"
+                                                   android:baselineAligned="false"
+                                                   android:padding="10dp">
+
+    <TextView
+            android:id="@+id/header"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dp"
+            android:text="@string/alert_me_when_price_reaches"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+    <!-- Horizontal container with price box and +/- buttons -->
+    <LinearLayout
+            android:id="@+id/price_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/header">
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom">
+
+            <!-- Price box -->
+            <EditText
+                    android:id="@+id/name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background"
+                    android:paddingStart="3dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/price_alert_placeholder"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Plus button -->
+        <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/button_border"
+                android:text="@string/plus"/>
+
+        <!-- Minus button -->
+        <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/button_border"
+                android:text="@string/minus"/>
+    </LinearLayout>
+
+    <!-- Percent above current price -->
+    <TextView
+            android:id="@+id/above_current_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/above_current_price"
+            app:layout_constraintTop_toBottomOf="@id/price_container"
+            android:layout_marginTop="12dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textColor="@android:color/black" />
+
+    <!-- Current buy rate -->
+    <TextView
+            android:id="@+id/current_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/current_rate"
+            app:layout_constraintTop_toBottomOf="@id/above_current_price"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textColor="@color/colorGray" />
+
+    <!-- Price type horizontal container -->
+    <LinearLayout
+            android:id="@+id/price_type_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/current_rate">
+
+        <!-- Price type label -->
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/price_type" />
+
+        <!-- Price type horizontal radio group -->
+        <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <!-- Sell button -->
+            <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/sell"/>
+
+            <!-- Buy button -->
+            <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/buy"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <!-- Delivery methods title -->
+    <TextView
+            android:id="@+id/delivery_methods_title"
+            app:layout_constraintTop_toBottomOf="@id/price_type_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/delivery_methods"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintBottom_toTopOf="@+id/delivery_methods_container"
+            app:layout_constraintVertical_bias="1.0"/>
+
+    <!-- Settings button (right) -->
+    <Button
+            android:id="@+id/btn_ic_settings"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/vector_ic_settings"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="0dp"
+            app:layout_constraintTop_toTopOf="@+id/delivery_methods_title"
+            app:layout_constraintBottom_toTopOf="@+id/delivery_methods_container"/>
+
+    <!-- Delivery methods horizontal container -->
+    <LinearLayout
+            android:id="@+id/delivery_methods_container"
+            android:paddingBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/actions_container">
+
+        <!-- By email -->
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:text="@string/by_email"
+                android:textColor="@color/colorGray"/>
+
+        <!-- By SMS -->
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/by_sms"
+                android:textColor="@color/colorGray"/>
+
+        <!-- Push -->
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/push"
+                android:textColor="@color/colorGray"/>
+    </LinearLayout>
+
+    <!-- Actions (buttons) bottom horizontal container -->
+    <LinearLayout
+            android:id="@+id/actions_container"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:gravity="bottom"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+        <!-- Apply Now button -->
+        <Button
+                style="@style/ButtonWithBorderBase"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/apply_now" />
+
+        <!-- Not Now button -->
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:text="@string/not_now"
+                style="@style/ButtonWithBorderBase" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

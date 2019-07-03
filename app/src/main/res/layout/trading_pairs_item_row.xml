@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:padding="4dp">
+
+    <!-- Border on top of each row -->
+    <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/colorGray"
+               app:layout_constraintTop_toTopOf="parent"
+               app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Trade item title -->
+    <TextView
+            android:text="EUR/GBP"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/buttonSell"/>
+
+    <!-- Sell button -->
+    <Button
+            android:text="@string/sell"
+            style="@style/ButtonWithBorderBase"
+            android:layout_width="70dp"
+            android:layout_height="24dp"
+            android:id="@+id/buttonSell" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- Sell price value -->
+    <TextView
+            android:text="0.89199"
+            android:textColor="@color/colorRed"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:id="@+id/sellPrice" app:layout_constraintStart_toEndOf="@+id/buttonSell"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- Buy button -->
+    <Button
+            android:text="@string/buy"
+            style="@style/ButtonWithBorderBase"
+            android:layout_width="70dp"
+            android:layout_height="24dp"
+            android:id="@+id/buttonBuy" app:layout_constraintEnd_toStartOf="@+id/buyPrice"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- Difference price value -->
+    <TextView
+            android:text="0.15%"
+            android:textColor="@color/colorGreen"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:id="@+id/diffPrice" android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonBuy" app:layout_constraintStart_toStartOf="@+id/buttonBuy"/>
+
+    <!-- Buy price label -->
+    <TextView
+            android:text="0.089212"
+            android:textColor="@color/colorRed"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:id="@+id/buyPrice" app:layout_constraintEnd_toStartOf="@+id/infoIcon"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- Circular (I) icon -->
+    <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp" app:srcCompat="@drawable/ic_info"
+            android:id="@+id/infoIcon" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp" app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

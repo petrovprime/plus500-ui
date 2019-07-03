@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Trading</string>
+    <string name="alert_me_when_price_reaches">Alert me when price reaches</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="apply_now">Apply Now</string>
+    <string name="not_now">Not Now</string>
+
+    <string name="offer_heading">Professional Account Offer</string>
+    <string name="offer_description">Apply for Plus500\'s Professional Client Account to be able to trade with a maximum leverage of up to 1:300.</string>
+
+    <string name="price_alert_placeholder">0.90100</string>
+    <string name="above_current_price">1.00% above the current price</string>
+    <string name="current_rate">Current buy rate 0.89206</string>
+    <string name="price_type">Price type</string>
+    <string name="sell">Sell</string>
+    <string name="buy">Buy</string>
+    <string name="delivery_methods">Delivery methods</string>
+    <string name="by_email">By email</string>
+    <string name="by_sms">By sms</string>
+    <string name="push">Push</string>
+</resources>
