@@ -43,17 +43,13 @@
 
         <!-- Plus button -->
         <Button
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="6dp"
+                style="@style/PlusMinusButtonBase"
                 android:background="@drawable/button_border"
                 android:text="@string/plus"/>
 
         <!-- Minus button -->
         <Button
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="6dp"
+                style="@style/PlusMinusButtonBase"
                 android:background="@drawable/button_border"
                 android:text="@string/minus"/>
     </LinearLayout>
@@ -155,27 +151,21 @@
 
         <!-- By email -->
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="5dp"
+                style="@style/DeliveryMethodBase"
                 android:text="@string/by_email"
                 android:textColor="@color/colorGray"/>
 
         <!-- By SMS -->
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                style="@style/DeliveryMethodBase"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
                 android:text="@string/by_sms"
                 android:textColor="@color/colorGray"/>
 
         <!-- Push -->
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                style="@style/DeliveryMethodBase"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
                 android:text="@string/push"
                 android:textColor="@color/colorGray"/>
     </LinearLayout>
